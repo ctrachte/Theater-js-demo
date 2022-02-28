@@ -1,0 +1,34 @@
+{
+  "name": "theater-js-demo",
+  "version": "1.0.0",
+  "description": "Testing out the Theater.js Library for demonstration purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html -p 4000 --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrachte/Theater-js-demo.git"
+  },
+  "keywords": [
+    "theatre.js",
+    "theater.js",
+    "theater",
+    "motion",
+    "animation"
+  ],
+  "author": "ctrachte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ctrachte/Theater-js-demo/issues"
+  },
+  "homepage": "https://github.com/ctrachte/Theater-js-demo#readme",
+  "dependencies": {
+    "@theatre/core": "^0.4.7",
+    "parcel-bundler": "^1.3.1"
+  },
+  "devDependencies": {
+    "@theatre/studio": "^0.4.7"
+  }
+}
