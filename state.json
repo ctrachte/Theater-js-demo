@@ -1,0 +1,118 @@
+{
+  "sheetsById": {
+    "Scene": {
+      "staticOverrides": {
+        "byObject": {
+          "Box": {
+            "position": {
+              "x": 487,
+              "y": 122,
+              "z": -98
+            }
+          }
+        }
+      },
+      "sequence": {
+        "subUnitsPerUnit": 30,
+        "length": 10,
+        "type": "PositionalSequence",
+        "tracksByObject": {
+          "Box": {
+            "trackData": {
+              "1ojiInwQZp": {
+                "type": "BasicKeyframedTrack",
+                "keyframes": [
+                  {
+                    "id": "eLINY-kgQ4",
+                    "position": 0.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      1,
+                      0.4568110170328346
+                    ],
+                    "value": 886.8673139054907
+                  },
+                  {
+                    "id": "plDGcZAtfe",
+                    "position": 2.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": 1886.4761009740935
+                  },
+                  {
+                    "id": "WywxSA9Mbi",
+                    "position": 5.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.048493391719620305,
+                      0.5529856630243615,
+                      0.5,
+                      0
+                    ],
+                    "value": 904.1030867463727
+                  }
+                ]
+              },
+              "zAuN8kjvIH": {
+                "type": "BasicKeyframedTrack",
+                "keyframes": [
+                  {
+                    "id": "U8lD_Oy_ay",
+                    "position": 0.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.36833952912019824,
+                      0.6259644511518159
+                    ],
+                    "value": 418.2503620105227
+                  },
+                  {
+                    "id": "yPGfaGqhEq",
+                    "position": 2.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5001112937201013,
+                      1.0072991167960255,
+                      0.5,
+                      0
+                    ],
+                    "value": 293.1056209856294
+                  },
+                  {
+                    "id": "L869s6tN5R",
+                    "position": 5.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.6230951032767916,
+                      0.31152685847679484,
+                      0.5,
+                      0
+                    ],
+                    "value": 417.3508223574951
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "1ojiInwQZp",
+              "[\"position\",\"y\"]": "zAuN8kjvIH"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitionVersion": "0.4.0",
+  "revisionHistory": [
+    "XP05TBf_w1rr6Qo2"
+  ]
+}
