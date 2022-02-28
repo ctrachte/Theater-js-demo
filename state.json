@@ -8,6 +8,12 @@
               "x": 487,
               "y": 122
             }
+          },
+          "Circle": {
+            "position": {
+              "x": 0,
+              "y": 0
+            }
           }
         }
       },
@@ -28,8 +34,8 @@
                     "handles": [
                       0.5,
                       1,
-                      0.33386219072633566,
-                      0.5925253027471202
+                      0.3816446087078152,
+                      0.7269342147763966
                     ],
                     "value": 886.8673139054907
                   },
@@ -38,12 +44,12 @@
                     "position": 1.167,
                     "connectedRight": true,
                     "handles": [
-                      0.3963723361325711,
-                      0.7322091606829371,
+                      0.41229980879306427,
+                      0.6926771277331499,
                       0.5152730982701689,
                       0.9821850717157177
                     ],
-                    "value": 1611.045979063514
+                    "value": 1594.2670102019183
                   },
                   {
                     "id": "plDGcZAtfe",
@@ -52,8 +58,8 @@
                     "handles": [
                       0.5,
                       1,
-                      0.5500428939090649,
-                      0.06993006993006994
+                      0.5393194166428367,
+                      0.15384615384615385
                     ],
                     "value": 1681.2052333553058
                   },
@@ -62,8 +68,8 @@
                     "position": 5.367,
                     "connectedRight": true,
                     "handles": [
-                      0.6503156236680122,
-                      0.420792909765196,
+                      0.36793072232400303,
+                      0.8403733293456156,
                       0.5,
                       0
                     ],
@@ -88,7 +94,7 @@
                   },
                   {
                     "id": "k_wDG7jKS5",
-                    "position": 0.467,
+                    "position": 0.3,
                     "connectedRight": true,
                     "handles": [
                       0.1650926018955759,
@@ -96,7 +102,7 @@
                       0.24417560397467103,
                       1.2510781782399014
                     ],
-                    "value": 233.48107652210737
+                    "value": 214.30384417705133
                   },
                   {
                     "id": "yPGfaGqhEq",
@@ -115,8 +121,8 @@
                     "position": 5.367,
                     "connectedRight": true,
                     "handles": [
-                      0.5959885357427148,
-                      0.3260210298772834,
+                      0.35649754346361845,
+                      0.8571967374779874,
                       0.5,
                       0
                     ],
@@ -146,8 +152,8 @@
                     "handles": [
                       0.3325463009477879,
                       0.4098394347048342,
-                      0.27472180051500883,
-                      0.9709030226780562
+                      0.24799387854221328,
+                      0.8698355582698382
                     ],
                     "value": 200.03860860644923
                   },
@@ -156,8 +162,8 @@
                     "position": 2.767,
                     "connectedRight": true,
                     "handles": [
-                      0.5,
-                      1,
+                      0.4389076069193244,
+                      0.9356843408311339,
                       0.5142979696883042,
                       0.14685314685314685
                     ],
@@ -183,6 +189,72 @@
               "[\"position\",\"y\"]": "zAuN8kjvIH",
               "[\"position\",\"z\"]": "MbJZ4Kb4mD"
             }
+          },
+          "Circle": {
+            "trackData": {
+              "4PM6VpIwf_": {
+                "type": "BasicKeyframedTrack",
+                "keyframes": [
+                  {
+                    "id": "aIEscGrxUb",
+                    "position": 0.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": 137
+                  },
+                  {
+                    "id": "vTZEhQ5Gcx",
+                    "position": 6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": 881
+                  }
+                ]
+              },
+              "pphshXumkD": {
+                "type": "BasicKeyframedTrack",
+                "keyframes": [
+                  {
+                    "id": "4ba_0CUhge",
+                    "position": 0.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": 87
+                  },
+                  {
+                    "id": "-_g48SSaLU",
+                    "position": 6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": 417
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "4PM6VpIwf_",
+              "[\"position\",\"y\"]": "pphshXumkD"
+            }
           }
         }
       }
@@ -190,6 +262,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "3nx-uBNbYnolM55V",
     "Lfer0h1DswGbL_bg",
     "XP05TBf_w1rr6Qo2"
   ]
