@@ -6,8 +6,7 @@
           "Box": {
             "position": {
               "x": 487,
-              "y": 122,
-              "z": -98
+              "y": 122
             }
           }
         }
@@ -24,39 +23,51 @@
                 "keyframes": [
                   {
                     "id": "eLINY-kgQ4",
-                    "position": 0.2,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
                       1,
-                      1,
-                      0.4568110170328346
+                      0.33386219072633566,
+                      0.5925253027471202
                     ],
                     "value": 886.8673139054907
                   },
                   {
+                    "id": "iOLvK3c-aE",
+                    "position": 1.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.3963723361325711,
+                      0.7322091606829371,
+                      0.5152730982701689,
+                      0.9821850717157177
+                    ],
+                    "value": 1611.045979063514
+                  },
+                  {
                     "id": "plDGcZAtfe",
-                    "position": 2.5,
+                    "position": 2.767,
                     "connectedRight": true,
                     "handles": [
                       0.5,
                       1,
-                      0.5,
-                      0
+                      0.5500428939090649,
+                      0.06993006993006994
                     ],
-                    "value": 1886.4761009740935
+                    "value": 1681.2052333553058
                   },
                   {
                     "id": "WywxSA9Mbi",
-                    "position": 5.3,
+                    "position": 5.367,
                     "connectedRight": true,
                     "handles": [
-                      0.048493391719620305,
-                      0.5529856630243615,
+                      0.6503156236680122,
+                      0.420792909765196,
                       0.5,
                       0
                     ],
-                    "value": 904.1030867463727
+                    "value": 881.4077176192351
                   }
                 ]
               },
@@ -65,7 +76,7 @@
                 "keyframes": [
                   {
                     "id": "U8lD_Oy_ay",
-                    "position": 0.2,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -76,8 +87,20 @@
                     "value": 418.2503620105227
                   },
                   {
+                    "id": "k_wDG7jKS5",
+                    "position": 0.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.1650926018955759,
+                      0.6163590528479563,
+                      0.24417560397467103,
+                      1.2510781782399014
+                    ],
+                    "value": 233.48107652210737
+                  },
+                  {
                     "id": "yPGfaGqhEq",
-                    "position": 2.6,
+                    "position": 2.767,
                     "connectedRight": true,
                     "handles": [
                       0.5001112937201013,
@@ -85,26 +108,80 @@
                       0.5,
                       0
                     ],
-                    "value": 293.1056209856294
+                    "value": 161.97064767604496
                   },
                   {
                     "id": "L869s6tN5R",
-                    "position": 5.167,
+                    "position": 5.367,
                     "connectedRight": true,
                     "handles": [
-                      0.6230951032767916,
-                      0.31152685847679484,
+                      0.5959885357427148,
+                      0.3260210298772834,
                       0.5,
                       0
                     ],
                     "value": 417.3508223574951
                   }
                 ]
+              },
+              "MbJZ4Kb4mD": {
+                "type": "BasicKeyframedTrack",
+                "keyframes": [
+                  {
+                    "id": "URHALIsBqM",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.24881945142168188,
+                      0.103278098926654
+                    ],
+                    "value": 199.66339107872298
+                  },
+                  {
+                    "id": "T5lA_QEu2x",
+                    "position": 0.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.3325463009477879,
+                      0.4098394347048342,
+                      0.27472180051500883,
+                      0.9709030226780562
+                    ],
+                    "value": 200.03860860644923
+                  },
+                  {
+                    "id": "R2auM9G91L",
+                    "position": 2.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5142979696883042,
+                      0.14685314685314685
+                    ],
+                    "value": 200.45484525846925
+                  },
+                  {
+                    "id": "a7JV4gP7im",
+                    "position": 5.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": 199.66320230539836
+                  }
+                ]
               }
             },
             "trackIdByPropPath": {
               "[\"position\",\"x\"]": "1ojiInwQZp",
-              "[\"position\",\"y\"]": "zAuN8kjvIH"
+              "[\"position\",\"y\"]": "zAuN8kjvIH",
+              "[\"position\",\"z\"]": "MbJZ4Kb4mD"
             }
           }
         }
@@ -113,6 +190,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "Lfer0h1DswGbL_bg",
     "XP05TBf_w1rr6Qo2"
   ]
 }

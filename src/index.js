@@ -68,6 +68,6 @@ div.addEventListener("click", (e) => {
   sheet.sequence.play({
     rate: 4, // play at 4x speed
     range: [0, 6], // how much of the sequence? 0-6 seconds
-    iterationCount: 1, // how many times? 4 times.
+    iterationCount: 1, // how many times? 
   });
 });
