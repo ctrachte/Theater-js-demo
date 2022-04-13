@@ -11,6 +11,7 @@ if (process.env.NODE_ENV === "development") {
 const demoProject = core.getProject("Demo Project", { state });
 // create scene, sheets are a collection of objects that can be animated together, compared to an Excel Sheet
 const sheet = demoProject.sheet("Scene");
+
 // create an object
 const box = sheet.object("Box", {
   position: {
@@ -65,11 +66,10 @@ let oldCirclePosition = circle.value.position;
 box.onValuesChange((newValues) => {
   divBox.style.left = newValues.position.x + "px";
   divBox.style.top = newValues.position.y + "px";
-  
   let old = oldBoxPosition.z;
   let change = Math.abs(old) - Math.abs(newValues.position.z);
-  //   console.log(old, newValues.position.z, change)
-  //console.table("before", newValues.position.z, divBox.style.zIndex);
+  // console.log(old, newValues.position.z, change)
+  // console.table("before", newValues.position.z, divBox.style.zIndex);
   if (change > 0) {
     divBox.style.height =
       parseFloat(divBox.style.height) +
@@ -100,8 +100,8 @@ circle.onValuesChange((newValues) => {
     divCircle.style.borderRadius = newValues.position.r + "px"
     let old = oldCirclePosition.z;
     let change = Math.abs(old) - Math.abs(newValues.position.z);
-    //   console.log(old, newValues.position.z, change)
-    //console.table("before", newValues.position.z, divBox.style.zIndex);
+    // console.log(old, newValues.position.z, change)
+    // console.table("before", newValues.position.z, divBox.style.zIndex);
     if (change > 0) {
         divCircle.style.height =
         parseFloat(divCircle.style.height) +
@@ -124,7 +124,7 @@ circle.onValuesChange((newValues) => {
       console.log("same z index onchange");
     }
     oldCirclePosition = newValues.position;
-  });
+});
 
 // interaction with UI
 divBox.addEventListener("mouseenter", (e) => {
@@ -134,6 +134,7 @@ divBox.addEventListener("mouseenter", (e) => {
     iterationCount: 1, // how many times?
   });
 });
+
 // interaction with UI
 divCircle.addEventListener("mouseenter", (e) => {
     sheet.sequence.play({
