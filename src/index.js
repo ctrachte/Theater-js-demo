@@ -63,68 +63,45 @@ let oldBoxPosition = box.value.position;
 let oldCirclePosition = circle.value.position;
 
 // hookup props to onChange
-box.onValuesChange((newValues) => {
-  divBox.style.left = newValues.position.x + "px";
-  divBox.style.top = newValues.position.y + "px";
-  let old = oldBoxPosition.z;
+box.onValuesChange((newValues)=> {
+  animate(newValues, divBox, oldBoxPosition)
+});
+// hookup props to onChange
+circle.onValuesChange((newValues)=> {
+  animate(newValues, divCircle, oldCirclePosition)
+});
+
+function animate (newValues, element, oldPosition) {
+  element.style.left = newValues.position.x + "px";
+  element.style.top = newValues.position.y + "px";
+  element.style.borderRadius = newValues.position.r + "px"
+  let old = oldCirclePosition.z;
   let change = Math.abs(old) - Math.abs(newValues.position.z);
   // console.log(old, newValues.position.z, change)
   // console.table("before", newValues.position.z, divBox.style.zIndex);
   if (change > 0) {
-    divBox.style.height =
-      parseFloat(divBox.style.height) +
-      parseFloat(Math.abs(change) * parseFloat(divBox.oldHeight)) +
+      element.style.height =
+      parseFloat(element.style.height) +
+      parseFloat(Math.abs(change) * parseFloat(element.oldHeight)) +
       "px";
-    divBox.style.width =
-      parseFloat(divBox.style.width) +
-      parseFloat(Math.abs(change) * parseFloat(divBox.oldWidth)) +
+    element.style.width =
+      parseFloat(element.style.width) +
+      parseFloat(Math.abs(change) * parseFloat(element.oldWidth)) +
       "px";
   } else if (change < 0) {
-    divBox.style.height =
-      parseFloat(divBox.style.height) -
-      parseFloat(Math.abs(change) * parseFloat(divBox.oldHeight)) +
+    element.style.height =
+      parseFloat(element.style.height) -
+      parseFloat(Math.abs(change) * parseFloat(element.oldHeight)) +
       "px";
-    divBox.style.width =
-      parseFloat(divBox.style.width) -
-      parseFloat(Math.abs(change) * parseFloat(divBox.oldWidth)) +
+    element.style.width =
+      parseFloat(element.style.width) -
+      parseFloat(Math.abs(change) * parseFloat(element.oldWidth)) +
       "px";
   } else {
     console.log("same z index onchange");
   }
-  oldBoxPosition = newValues.position;
-});
-// hookup props to onChange
-circle.onValuesChange((newValues) => {
-    divCircle.style.left = newValues.position.x + "px";
-    divCircle.style.top = newValues.position.y + "px";
-    divCircle.style.borderRadius = newValues.position.r + "px"
-    let old = oldCirclePosition.z;
-    let change = Math.abs(old) - Math.abs(newValues.position.z);
-    // console.log(old, newValues.position.z, change)
-    // console.table("before", newValues.position.z, divBox.style.zIndex);
-    if (change > 0) {
-        divCircle.style.height =
-        parseFloat(divCircle.style.height) +
-        parseFloat(Math.abs(change) * parseFloat(divCircle.oldHeight)) +
-        "px";
-      divCircle.style.width =
-        parseFloat(divCircle.style.width) +
-        parseFloat(Math.abs(change) * parseFloat(divCircle.oldWidth)) +
-        "px";
-    } else if (change < 0) {
-      divCircle.style.height =
-        parseFloat(divCircle.style.height) -
-        parseFloat(Math.abs(change) * parseFloat(divCircle.oldHeight)) +
-        "px";
-      divCircle.style.width =
-        parseFloat(divCircle.style.width) -
-        parseFloat(Math.abs(change) * parseFloat(divCircle.oldWidth)) +
-        "px";
-    } else {
-      console.log("same z index onchange");
-    }
-    oldCirclePosition = newValues.position;
-});
+  oldPosition = newValues.position;
+}
 
 // interaction with UI
 divBox.addEventListener("mouseenter", (e) => {
@@ -143,3 +120,6 @@ divCircle.addEventListener("mouseenter", (e) => {
       iterationCount: 1, // how many times?
     });
   });
+
+  // Particle Generator:
+
