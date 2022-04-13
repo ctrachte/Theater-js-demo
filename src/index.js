@@ -122,8 +122,11 @@ function animate(newValues, element, oldPosition) {
 }
 
 // Particle Generator:
-let particlePositions = [];
+let ParticleSource = "";
+let particlePosition = "";
+let ParticleElements = [];
 const button = document.createElement("div");
+button.innerHTML = "Generate Particles";
 button.style.cssText = `
 position: absolute;
 width: 100;
@@ -132,10 +135,18 @@ left: 50%;
 top: 50%;
 background: #EEE;
 border-radius: 50%;
-color: #fff;
-`;
+color: black;
+z-index: 9999;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+align-items: center `;
 button.onclick = () => {
-  console.log(sheet.sequence);
+  ParticleElements.forEach(function (particle) {
+    particle.style.left = 980;
+    particle.style.top = 540;
+  });
   sheet.sequence.play({
     rate: 4, // play at 4x speed
     range: [0, 6], // how much of the sequence? 0-6 seconds
@@ -143,44 +154,75 @@ button.onclick = () => {
   });
 };
 function LoadParticles(particles, scene) {
+  particlePosition = "";
+  ParticleElements = [];
+  ParticleSource = sheet.object("particle", {
+    position: {
+      x: button.getBoundingClientRect().left, // props are arbritrary until they are made significant by the user
+      y: button.getBoundingClientRect().top,
+      z: 500,
+      r: 5,
+    },
+  });
+  particlePosition = ParticleSource.value.position;
+
   for (let i = 0; i < particles; i++) {
-    const Particle = sheet.object("particle" + i, {
-      position: {
-        x: button.getBoundingClientRect().left, // props are arbritrary until they are made significant by the user
-        y: button.getBoundingClientRect().top,
-        z: 500,
-        r: 5,
-      },
-    });
-    console.log(button.style.top);
     // read values through code
     const particleElement = document.createElement("div");
     particleElement.style = `
     position: absolute;
     width: 10px;
     height: 10px;
-    left:  50%;
-    top: 50%;
+    left: 980;
+    top: 540;
     background: #EEE;
     border-radius: 50%;
   `;
     particleElement.radius = 5;
     particleElement.oldHeight = 10;
     particleElement.oldWidth = 10;
-
+    ParticleElements[i] = particleElement;
+    ParticleElements[i].vectorX = Math.random() < 0.5;
+    ParticleElements[i].vectorY = Math.random() < 0.5;
     setTimeout(() => {
       // add div 'box' to screen
       document.body.appendChild(particleElement);
-      sheet.sequence.position = 0; // set sequence to a time-based position (0.5 seconds)
     }, 1000);
-
-    particlePositions[i] = Particle.value.position;
-    // listen for changes and animate the particle.
-    Particle.onValuesChange((newValues) => {
-      animate(newValues, particleElement, particlePositions[i]);
-    });
   }
+  ParticleSource.onValuesChange((newValues) => {
+    animate(newValues, ParticleElements[0], ParticleSource);
+    Explode(3);
+  });
 }
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+function Explode(size) {
+  ParticleElements.forEach(function (particle) {
+    //move in X direction
+    if (particle.vectorX) {
+      particle.style.left =
+        parseFloat(particle.style.left) + randomIntFromInterval(0, size);
+    } else {
+      particle.style.left =
+        parseFloat(particle.style.left) - randomIntFromInterval(0, size);
+    }
+    console.log(
+      parseFloat(particle.style.left),
+      parseFloat(particle.style.top)
+    );
+    // move in Y direction
+    if (particle.vectorY) {
+      particle.style.top =
+        parseFloat(particle.style.top) + randomIntFromInterval(0, size);
+    } else {
+      particle.style.top =
+        parseFloat(particle.style.top) - randomIntFromInterval(0, size);
+    }
+  });
+}
+
 setTimeout(() => {
   document.body.appendChild(button);
   LoadParticles(100, sheet);
