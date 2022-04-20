@@ -197,6 +197,7 @@ function LoadParticles(particles, scene) {
     ParticleElements[i] = particleElement;
     ParticleElements[i].vectorX =  randomIntFromInterval(-50, 50);
     ParticleElements[i].vectorY =  randomIntFromInterval(-50, 50);
+
     setTimeout(() => {
       // add div 'box' to screen
       document.body.appendChild(particleElement);
@@ -211,19 +212,25 @@ function randomIntFromInterval(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-function Explode(speedMultiplier) {
+function Explode(acceleration) {
   ParticleElements.forEach(function (particle) {
+    // show element:
+    particle.style.display = 'block'
     //move in X direction
     particle.style.left =
-    parseFloat(particle.style.left) + particle.vectorX * speedMultiplier;
+    parseFloat(particle.style.left) + particle.vectorX * acceleration;
     //move in Y direction
     particle.style.top =
-    parseFloat(particle.style.top) + particle.vectorY * speedMultiplier;
+    parseFloat(particle.style.top) + particle.vectorY * acceleration;
   });
 }
 
 //Fire away!
 setTimeout(() => {
   document.body.appendChild(button);
-  LoadParticles(1000, sheet);
+  LoadParticles(500, sheet);
+  // on page load, particles are not visible
+  ParticleElements.forEach(function (particle) {
+    particle.style.display = "none";
+  });
 }, 1000);
