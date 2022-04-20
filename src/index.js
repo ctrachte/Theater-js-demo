@@ -161,15 +161,12 @@ function LoadParticles(particles, scene) {
       x: button.getBoundingClientRect().left, // props are arbritrary until they are made significant by the user
       y: button.getBoundingClientRect().top,
       z: 500,
-      r: 5,
+      r: 2,
     },
   });
   particlePosition = ParticleSource.value.position;
-
-  for (let i = 0; i < particles; i++) {
-    // read values through code
-    const particleElement = document.createElement("div");
-    particleElement.style = `
+  const keyParticle = document.createElement("div");
+  keyParticle.style = `
     position: absolute;
     width: 10px;
     height: 10px;
@@ -178,52 +175,55 @@ function LoadParticles(particles, scene) {
     background: #EEE;
     border-radius: 50%;
   `;
+  setTimeout(() => {
+    // add div 'box' to screen
+    document.body.appendChild(keyParticle);
+  }, 1000);
+  for (let i = 0; i < particles; i++) {
+    // read values through code
+    let particleElement = document.createElement("div");
+    particleElement.style = `
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      left: 980;
+      top: 540;
+      background: #EEE;
+      border-radius: 50%;
+    `;
     particleElement.radius = 5;
     particleElement.oldHeight = 10;
     particleElement.oldWidth = 10;
     ParticleElements[i] = particleElement;
-    ParticleElements[i].vectorX = Math.random() < 0.5;
-    ParticleElements[i].vectorY = Math.random() < 0.5;
+    ParticleElements[i].vectorX =  randomIntFromInterval(-50, 50);
+    ParticleElements[i].vectorY =  randomIntFromInterval(-50, 50);
     setTimeout(() => {
       // add div 'box' to screen
       document.body.appendChild(particleElement);
     }, 1000);
   }
   ParticleSource.onValuesChange((newValues) => {
-    animate(newValues, ParticleElements[0], ParticleSource);
-    Explode(3);
+    animate(newValues, keyParticle, ParticleSource);
+    Explode(1);
   });
 }
 function randomIntFromInterval(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-function Explode(size) {
+function Explode(speedMultiplier) {
   ParticleElements.forEach(function (particle) {
     //move in X direction
-    if (particle.vectorX) {
-      particle.style.left =
-        parseFloat(particle.style.left) + randomIntFromInterval(0, size);
-    } else {
-      particle.style.left =
-        parseFloat(particle.style.left) - randomIntFromInterval(0, size);
-    }
-    console.log(
-      parseFloat(particle.style.left),
-      parseFloat(particle.style.top)
-    );
-    // move in Y direction
-    if (particle.vectorY) {
-      particle.style.top =
-        parseFloat(particle.style.top) + randomIntFromInterval(0, size);
-    } else {
-      particle.style.top =
-        parseFloat(particle.style.top) - randomIntFromInterval(0, size);
-    }
+    particle.style.left =
+    parseFloat(particle.style.left) + particle.vectorX * speedMultiplier;
+    //move in Y direction
+    particle.style.top =
+    parseFloat(particle.style.top) + particle.vectorY * speedMultiplier;
   });
 }
 
+//Fire away!
 setTimeout(() => {
   document.body.appendChild(button);
-  LoadParticles(100, sheet);
+  LoadParticles(1000, sheet);
 }, 1000);
