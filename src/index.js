@@ -149,7 +149,7 @@ button.onclick = () => {
   });
   sheet.sequence.play({
     rate: 4, // play at 4x speed
-    range: [0, 6], // how much of the sequence? 0-6 seconds
+    range: [0, 10], // how much of the sequence? 0-6 seconds
     iterationCount: 1, // how many times?
   });
 };
@@ -184,8 +184,8 @@ function LoadParticles(particles, scene) {
     let particleElement = document.createElement("div");
     particleElement.style = `
       position: absolute;
-      width: 2px;
-      height: 2px;
+      width: 5px;
+      height: 5px;
       left: 980;
       top: 540;
       background: #EEE;
@@ -228,7 +228,7 @@ function Explode(acceleration) {
 //Fire away!
 setTimeout(() => {
   document.body.appendChild(button);
-  LoadParticles(500, sheet);
+  LoadParticles(1000, sheet);
   // on page load, particles are not visible
   ParticleElements.forEach(function (particle) {
     particle.style.display = "none";
